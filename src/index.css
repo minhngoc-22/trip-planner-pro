@@ -1,0 +1,310 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) * 0.8);
+  --radius-md: calc(var(--radius) * 0.9);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.25);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+}
+
+/* Default / Lavender Dream (Light) */
+:root,
+:root[data-theme="lavender"] {
+  --radius: 0.625rem;
+  --background: #f7eef7;
+  --foreground: #4b225d;
+  --card: #ffffff;
+  --card-foreground: #4b225d;
+  --popover: #ffffff;
+  --popover-foreground: #4b225d;
+  --primary: #9e70c7;
+  --primary-foreground: #ffffff;
+  --secondary: #1770b0;
+  --secondary-foreground: #ffffff;
+  --muted: #ede0ed;
+  --muted-foreground: #7a5d8a;
+  --accent: #ae7c0a;
+  --accent-foreground: #ffffff;
+  --destructive: #d32f2f;
+  --destructive-foreground: #ffffff;
+  --warning: #ea580c;
+  --warning-foreground: #ffffff;
+  --border: #dcc8e0;
+  --input: #dcc8e0;
+  --ring: #9e70c7;
+}
+
+/* Lavender Dream (Dark) */
+.dark,
+.dark[data-theme="lavender"] {
+  --radius: 0.625rem;
+  --background: #1a1025;
+  --foreground: #ede0ed;
+  --card: #2a1a38;
+  --card-foreground: #ede0ed;
+  --popover: #2a1a38;
+  --popover-foreground: #ede0ed;
+  --primary: #b88fd9;
+  --primary-foreground: #1a1025;
+  --secondary: #5ba0d9;
+  --secondary-foreground: #1a1025;
+  --muted: #352545;
+  --muted-foreground: #b8a5c4;
+  --accent: #d4a81a;
+  --accent-foreground: #1a1025;
+  --destructive: #e55f5f;
+  --destructive-foreground: #1a1025;
+  --warning: #f97316;
+  --warning-foreground: #1a1025;
+  --border: #4a3560;
+  --input: #4a3560;
+  --ring: #b88fd9;
+}
+
+/* Ocean Breeze (Light) */
+:root[data-theme="ocean"] {
+  --background: #eef7fb;
+  --foreground: #0c2d48;
+  --card: #ffffff;
+  --card-foreground: #0c2d48;
+  --popover: #ffffff;
+  --popover-foreground: #0c2d48;
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
+  --secondary: #0d9488;
+  --secondary-foreground: #ffffff;
+  --muted: #dff0f7;
+  --muted-foreground: #476b85;
+  --accent: #0369a1;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --warning: #ea580c;
+  --warning-foreground: #ffffff;
+  --border: #badcf0;
+  --input: #badcf0;
+  --ring: #0284c7;
+}
+
+/* Ocean Breeze (Dark) */
+.dark[data-theme="ocean"] {
+  --background: #0c1926;
+  --foreground: #e0f2fe;
+  --card: #132639;
+  --card-foreground: #e0f2fe;
+  --popover: #132639;
+  --popover-foreground: #e0f2fe;
+  --primary: #38bdf8;
+  --primary-foreground: #082f49;
+  --secondary: #2dd4bf;
+  --secondary-foreground: #042f2e;
+  --muted: #1b344d;
+  --muted-foreground: #94b8d1;
+  --accent: #0ea5e9;
+  --accent-foreground: #082f49;
+  --destructive: #f87171;
+  --destructive-foreground: #450a0a;
+  --warning: #fb923c;
+  --warning-foreground: #431407;
+  --border: #254666;
+  --input: #254666;
+  --ring: #38bdf8;
+}
+
+/* Sage Nature (Light) */
+:root[data-theme="sage"] {
+  --background: #f1f6f1;
+  --foreground: #1e3626;
+  --card: #ffffff;
+  --card-foreground: #1e3626;
+  --popover: #ffffff;
+  --popover-foreground: #1e3626;
+  --primary: #4d7c5b;
+  --primary-foreground: #ffffff;
+  --secondary: #846442;
+  --secondary-foreground: #ffffff;
+  --muted: #e1ede3;
+  --muted-foreground: #58725f;
+  --accent: #658354;
+  --accent-foreground: #ffffff;
+  --destructive: #c93b3b;
+  --destructive-foreground: #ffffff;
+  --warning: #d97706;
+  --warning-foreground: #ffffff;
+  --border: #c2d9c6;
+  --input: #c2d9c6;
+  --ring: #4d7c5b;
+}
+
+/* Sage Nature (Dark) */
+.dark[data-theme="sage"] {
+  --background: #111c15;
+  --foreground: #e4efe6;
+  --card: #1a2a20;
+  --card-foreground: #e4efe6;
+  --popover: #1a2a20;
+  --popover-foreground: #e4efe6;
+  --primary: #6eb884;
+  --primary-foreground: #0d2114;
+  --secondary: #c79c6e;
+  --secondary-foreground: #271a0c;
+  --muted: #23372b;
+  --muted-foreground: #9db8a4;
+  --accent: #82b372;
+  --accent-foreground: #0d2114;
+  --destructive: #f87171;
+  --destructive-foreground: #450a0a;
+  --warning: #fbbf24;
+  --warning-foreground: #451a03;
+  --border: #2f4a39;
+  --input: #2f4a39;
+  --ring: #6eb884;
+}
+
+/* Warm Sand (Light) */
+:root[data-theme="sand"] {
+  --background: #faf5ee;
+  --foreground: #432b18;
+  --card: #ffffff;
+  --card-foreground: #432b18;
+  --popover: #ffffff;
+  --popover-foreground: #432b18;
+  --primary: #b45309;
+  --primary-foreground: #ffffff;
+  --secondary: #0f766e;
+  --secondary-foreground: #ffffff;
+  --muted: #f2e6d6;
+  --muted-foreground: #7c6046;
+  --accent: #a16207;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --warning: #ea580c;
+  --warning-foreground: #ffffff;
+  --border: #e4d2bb;
+  --input: #e4d2bb;
+  --ring: #b45309;
+}
+
+/* Warm Sand (Dark) */
+.dark[data-theme="sand"] {
+  --background: #1f1812;
+  --foreground: #f5ebd9;
+  --card: #2c2219;
+  --card-foreground: #f5ebd9;
+  --popover: #2c2219;
+  --popover-foreground: #f5ebd9;
+  --primary: #f59e0b;
+  --primary-foreground: #291804;
+  --secondary: #2dd4bf;
+  --secondary-foreground: #042f2e;
+  --muted: #382c21;
+  --muted-foreground: #c4b099;
+  --accent: #fbbf24;
+  --accent-foreground: #291804;
+  --destructive: #f87171;
+  --destructive-foreground: #450a0a;
+  --warning: #fb923c;
+  --warning-foreground: #431407;
+  --border: #4d3d2f;
+  --input: #4d3d2f;
+  --ring: #f59e0b;
+}
+
+/* Midnight (Light) */
+:root[data-theme="midnight"] {
+  --background: #f1f5f9;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-foreground: #0f172a;
+  --popover: #ffffff;
+  --popover-foreground: #0f172a;
+  --primary: #4f46e5;
+  --primary-foreground: #ffffff;
+  --secondary: #0284c7;
+  --secondary-foreground: #ffffff;
+  --muted: #e2e8f0;
+  --muted-foreground: #475569;
+  --accent: #6366f1;
+  --accent-foreground: #ffffff;
+  --destructive: #dc2626;
+  --destructive-foreground: #ffffff;
+  --warning: #ea580c;
+  --warning-foreground: #ffffff;
+  --border: #cbd5e1;
+  --input: #cbd5e1;
+  --ring: #4f46e5;
+}
+
+/* Midnight (Dark) */
+.dark[data-theme="midnight"] {
+  --background: #0b1120;
+  --foreground: #f1f5f9;
+  --card: #141e33;
+  --card-foreground: #f1f5f9;
+  --popover: #141e33;
+  --popover-foreground: #f1f5f9;
+  --primary: #818cf8;
+  --primary-foreground: #0f172a;
+  --secondary: #38bdf8;
+  --secondary-foreground: #082f49;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #a5b4fc;
+  --accent-foreground: #0f172a;
+  --destructive: #f87171;
+  --destructive-foreground: #450a0a;
+  --warning: #fb923c;
+  --warning-foreground: #431407;
+  --border: #2b3954;
+  --input: #2b3954;
+  --ring: #818cf8;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply min-h-svh bg-background font-sans text-foreground antialiased;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+#root {
+  min-height: 100svh;
+}
